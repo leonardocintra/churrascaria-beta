@@ -1,6 +1,12 @@
 import { MapPin, Phone, Instagram, Facebook } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Cinzel } from "next/font/google";
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
 
 export default function Footer() {
   return (
@@ -18,7 +24,7 @@ export default function Footer() {
                 className="object-contain w-full h-full"
               />
             </div>
-            <h3 className="font-serif text-2xl font-bold text-brand-gold">
+            <h3 className={`${cinzel.className} text-2xl font-bold text-brand-gold`}>
               CHURRASCARIA BETA
             </h3>
           </div>
@@ -58,10 +64,10 @@ export default function Footer() {
               </Link>
             </li>
             <li className="flex items-center gap-4 mt-4">
-              <Link href="#" className="bg-brand-red p-2 rounded-full hover:bg-red-700 transition-colors">
+              <Link href="https://www.instagram.com/churrascaria_beta" className="bg-brand-red p-2 rounded-full hover:bg-red-700 transition-colors">
                 <Instagram className="w-5 h-5 text-white" />
               </Link>
-              <Link href="#" className="bg-brand-red p-2 rounded-full hover:bg-red-700 transition-colors">
+              <Link href="https://www.facebook.com/churrascariabeta/?locale=pt_BR" className="bg-brand-red p-2 rounded-full hover:bg-red-700 transition-colors">
                 <Facebook className="w-5 h-5 text-white" />
               </Link>
             </li>
