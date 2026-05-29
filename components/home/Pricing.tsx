@@ -1,14 +1,26 @@
-import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
 export default function Pricing() {
-  const features = [
-    "Rodízio Completo de Carnes Nobres",
-    "Buffet de Saladas Variadas",
-    "Pratos Quentes e Guarnições",
-    "Sobremesas (Inclusas no Premium)",
-    "Estacionamento Gratuito"
+  const prices = [
+    {
+      day: "Segunda a Quinta",
+      value: "60,00",
+      message: "Ol%C3%A1%2C%20gostaria%20de%20reservar%20para%20Segunda%20a%20Quinta%20(R%24%2060%2C00%20por%20pessoa).",
+      highlight: false,
+    },
+    {
+      day: "Sexta-feira",
+      value: "65,00",
+      message: "Ol%C3%A1%2C%20gostaria%20de%20reservar%20para%20Sexta-feira%20(R%24%2065%2C00%20por%20pessoa).",
+      highlight: true,
+    },
+    {
+      day: "Sábado e Domingo",
+      value: "75,00",
+      message: "Ol%C3%A1%2C%20gostaria%20de%20reservar%20para%20S%C3%A1bado%20e%20Domingo%20(R%24%2075%2C00%20por%20pessoa).",
+      highlight: false,
+    },
   ];
 
   return (
@@ -19,75 +31,37 @@ export default function Pricing() {
             NOSSOS PREÇOS
           </h2>
           <p className="text-charcoal/80 max-w-2xl mx-auto">
-            Escolha o melhor momento para saborear nosso churrasco. Preços justos para uma qualidade inigualável.
+            Funcionamento: 10h30 às 14h30, todos os dias da semana.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Card Almoço */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all hover:-translate-y-1">
-            <div className="bg-brand-charcoal p-6 text-center">
-              <h3 className="font-display text-2xl text-white tracking-wider">ALMOÇO</h3>
-              <p className="text-gray-400 text-sm mt-1">Segunda a Sexta (Exceto Feriados)</p>
-            </div>
-            <div className="p-8">
-              <div className="text-center mb-8">
-                <span className="text-sm text-gray-500 align-top">R$</span>
-                <span className="text-6xl font-bold text-brand-red">59</span>
-                <span className="text-xl text-gray-500">,90</span>
-                <p className="text-gray-500 text-sm mt-2">por pessoa</p>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {prices.map((price) => (
+            <div
+              key={price.day}
+              className={`bg-white rounded-2xl shadow-xl overflow-hidden border transition-all hover:shadow-2xl hover:-translate-y-1 ${
+                price.highlight ? "border-2 border-brand-gold" : "border-gray-100"
+              }`}
+            >
+              <div className={`${price.highlight ? "bg-brand-red" : "bg-brand-charcoal"} p-6 text-center`}>
+                <h3 className="font-display text-2xl text-white tracking-wider">{price.day}</h3>
+                <p className={`${price.highlight ? "text-red-100" : "text-gray-300"} text-sm mt-1`}>Almoço por pessoa</p>
               </div>
-              <ul className="space-y-4 mb-8">
-                {features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-gray-700">
-                    <CheckCircle2 className="w-5 h-5 text-brand-gold mr-3 shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Button className="w-full" asChild>
-                <Link href="https://wa.me/5516992398512?text=Reserva%20para%20o%20Almo%C3%A7o">
-                  RESERVAR ALMOÇO
-                </Link>
-              </Button>
-            </div>
-          </div>
-
-          {/* Card Jantar/FDS */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-brand-gold relative transform scale-105 z-10">
-             <div className="absolute top-0 right-0 bg-brand-gold text-charcoal text-xs font-bold px-3 py-1 rounded-bl-lg uppercase">
-              Mais Vendido
-            </div>
-            <div className="bg-brand-red p-6 text-center">
-              <h3 className="font-display text-2xl text-white tracking-wider">JANTAR & FINAIS DE SEMANA</h3>
-              <p className="text-red-100 text-sm mt-1">Jantar (Todos os dias) e Almoço (Sáb/Dom/Feriados)</p>
-            </div>
-            <div className="p-8">
-              <div className="text-center mb-8">
-                <span className="text-sm text-gray-500 align-top">R$</span>
-                <span className="text-6xl font-bold text-brand-red">79</span>
-                <span className="text-xl text-gray-500">,90</span>
-                <p className="text-gray-500 text-sm mt-2">por pessoa</p>
+              <div className="p-8">
+                <div className="text-center mb-8">
+                  <span className="text-sm text-gray-500 align-top">R$</span>
+                  <span className="text-6xl font-bold text-brand-red">{price.value.split(",")[0]}</span>
+                  <span className="text-xl text-gray-500">,{price.value.split(",")[1]}</span>
+                  <p className="text-gray-500 text-sm mt-2">por pessoa</p>
+                </div>
+                <Button className={`w-full ${price.highlight ? "bg-brand-gold text-charcoal hover:bg-yellow-500" : ""}`} asChild>
+                  <Link href={`https://wa.me/5516992398512?text=${price.message}`} target="_blank" rel="noopener noreferrer">
+                    RESERVAR AGORA
+                  </Link>
+                </Button>
               </div>
-              <ul className="space-y-4 mb-8">
-                {features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-gray-700">
-                    <CheckCircle2 className="w-5 h-5 text-brand-gold mr-3 shrink-0" />
-                    <span className="font-medium">{feature}</span>
-                  </li>
-                ))}
-                <li className="flex items-center text-brand-red font-bold">
-                  <CheckCircle2 className="w-5 h-5 text-brand-gold mr-3 shrink-0" />
-                  + Opções Especiais do Chef
-                </li>
-              </ul>
-              <Button className="w-full bg-brand-gold text-charcoal hover:bg-yellow-500" asChild>
-                <Link href="https://wa.me/5516992398512?text=Reserva%20para%20o%20Jantar">
-                  RESERVAR AGORA
-                </Link>
-              </Button>
             </div>
-          </div>
+          ))}
         </div>
 
         <div className="text-center mt-12">
