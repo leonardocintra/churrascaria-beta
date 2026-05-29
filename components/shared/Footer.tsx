@@ -74,6 +74,51 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+
+      <div className="container mx-auto px-4 mb-8">
+        <div className="rounded-2xl border border-gray-700/70 bg-brand-charcoal/60 p-5 md:p-6">
+          <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-brand-gold/90">Funcionamento</p>
+              <p className="mt-2 text-white text-xl font-semibold">10h30 às 14h30</p>
+              <p className="text-gray-300 text-sm">Todos os dias da semana</p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full md:max-w-2xl">
+              <Link
+                href="https://wa.me/5516992398512?text=Ol%C3%A1%2C%20gostaria%20de%20reservar%20para%20Segunda%20a%20Quinta%20(R%24%2060%2C00%20por%20pessoa)."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-gray-700 bg-black/10 p-3 transition-colors hover:border-brand-gold/70 hover:bg-black/20"
+              >
+                <p className="text-sm font-semibold text-white">Segunda a Quinta</p>
+                <p className="text-brand-gold font-bold text-lg">R$ 60,00</p>
+                <p className="text-gray-300 text-xs">por pessoa</p>
+              </Link>
+              <Link
+                href="https://wa.me/5516992398512?text=Ol%C3%A1%2C%20gostaria%20de%20reservar%20para%20Sexta-feira%20(R%24%2065%2C00%20por%20pessoa)."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-gray-700 bg-black/10 p-3 transition-colors hover:border-brand-gold/70 hover:bg-black/20"
+              >
+                <p className="text-sm font-semibold text-white">Sexta-feira</p>
+                <p className="text-brand-gold font-bold text-lg">R$ 65,00</p>
+                <p className="text-gray-300 text-xs">por pessoa</p>
+              </Link>
+              <Link
+                href="https://wa.me/5516992398512?text=Ol%C3%A1%2C%20gostaria%20de%20reservar%20para%20S%C3%A1bado%20e%20Domingo%20(R%24%2075%2C00%20por%20pessoa)."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-gray-700 bg-black/10 p-3 transition-colors hover:border-brand-gold/70 hover:bg-black/20"
+              >
+                <p className="text-sm font-semibold text-white">Sábado e Domingo</p>
+                <p className="text-brand-gold font-bold text-lg">R$ 75,00</p>
+                <p className="text-gray-300 text-xs">por pessoa</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
       
       <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-400 md:flex-row justify-between items-center gap-2 px-4 space-y-2">
         <p className="font-semibold">&copy; {new Date().getFullYear()} - Churrascaria Beta. Todos os direitos reservados.</p>
