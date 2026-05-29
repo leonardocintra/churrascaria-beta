@@ -69,8 +69,8 @@ export default function Footer() {
         </div>
       </div>
       
-      <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center gap-2 px-4">
-        <p>&copy; {new Date().getFullYear()} Churrascaria Beta. Todos os direitos reservados.</p>
+      <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-400 md:flex-row justify-between items-center gap-2 px-4 space-y-2">
+        <p className="font-semibold">&copy; {new Date().getFullYear()} - Churrascaria Beta. Todos os direitos reservados.</p>
         <p>
           Desenvolvido por <Link href="https://leonardocintra.com.br" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:underline">Leonardo Cintra</Link>
         </p>

@@ -14,7 +14,7 @@ export default function Gallery() {
   // Let's use <img> for the "wow" effect right now as I don't have the Cloudinary cloud name.
 
   const images = [
-    { src: "https://images.unsplash.com/photo-1544025162-d7669d26ce37?q=80&w=800&auto=format&fit=crop", alt: "Costela Assada" },
+    { src: "img/corte.png", alt: "Costela Assada" },
     { src: "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?q=80&w=800&auto=format&fit=crop", alt: "Picanha na Chapa" },
     { src: "https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop", alt: "Buffet de Saladas" },
     { src: "https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800&auto=format&fit=crop", alt: "Steakhouse Vibe" },

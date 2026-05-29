@@ -1,23 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Cinzel } from "next/font/google";
 import { Button } from "@/components/ui/Button";
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
 
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-40 w-full bg-brand-red/95 backdrop-blur shadow-md">
       <div className="container mx-auto px-4 flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <div className="relative h-12 w-12 rounded-full overflow-hidden bg-white/10 p-1">
+          <div className="relative h-14 w-14 rounded-full overflow-hidden bg-white/10 p-0.5 md:h-16 md:w-16">
              <Image 
               src="/logo.png" 
               alt="Churrascaria Beta Logo" 
-              width={48} 
-              height={48} 
-              className="object-contain w-full h-full"
+              width={160} 
+              height={160} 
+              className="object-contain w-full h-full scale-125"
             />
           </div>
-          <span className="font-serif text-2xl font-bold text-cream tracking-wide">
-            CHURRASCARIA BETA
+          <span className={`${cinzel.className} text-[1.45rem] text-cream leading-none md:text-3xl`}>
+            <span className="font-bold tracking-[0.04em] md:tracking-[0.08em]">BETA</span>{" "}
+            <span className="font-semibold tracking-[0.02em] md:tracking-[0.05em]">Churrascaria</span>
           </span>
         </Link>
         
